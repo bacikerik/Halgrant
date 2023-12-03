@@ -1,6 +1,6 @@
 # Halgrant
 
-<img src="src/image/Halgrant.png" width="400em" alt="Logo">
+<img src="src/image/Halgrant.png" width="100%" alt="Logo">
 
 
 ## A Seamless Hyper-V, AlmaLinux, and Vagrant Integration for Efficient VM Creation
@@ -113,8 +113,8 @@ As mentioned above, the infra VM has internet access via the public network and 
 ## Add Network Adapter to your 'infra' node
 <!-- ![alt text](https://github.com/bacikerik/vagrant_hyperV/blob/main/src/image/add_network_adapter.png "Add Network Adapter")
 https://github.com/bacikerik/vagrant_hyperV/blob/main/src/image/vInternal.png -->
-<img src="src/image/add_network_adapter.png" width="800em" alt="Add Network Adapter">
+<img src="src/image/add_network_adapter.png" width="100%" alt="Add Network Adapter">
 
 ## Set new adapter as vInternal to your 'infra' node
 <!-- ![alt text](https://github.com/bacikerik/vagrant_hyperV/blob/main/src/image/vInternal.png "Set new adapter as vInternal") -->
-<img src="src/image/vInternal.png" width="800em" alt="Add Network Adapter">
+<img src="src/image/vInternal.png" width="100%" alt="Add Network Adapter">
