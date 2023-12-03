@@ -150,30 +150,6 @@ Vagrant.configure("2") do |config|
     SHELL
     # install vim & tree
     infra.vm.provision "shell", inline: "sudo dnf install -y vim tree"
-    # SSH client configuration to disable StrictHostKeyChecking
-    # infra.vm.provision "shell", inline: <<-SHELL
-    #   echo 'StrictHostKeyChecking no' | sudo tee -a /etc/ssh/ssh_config
-    # SHELL
-    # infra.vm.provision "file", source: "#{KEY_PRIV_PEM}", destination: "/tmp/key.pem"
-    # infra.vm.provision "shell", inline: <<-SHELL 
-    #   mkdir -p /home/"#{CUSTOM_USER}"/pem_key  
-    #   chown "#{CUSTOM_USER}":"#{CUSTOM_USER}" /home/"#{CUSTOM_USER}"/pem_key 
-    #   chmod 700 /home/"#{CUSTOM_USER}"/pem_key   
-    #   cat /tmp/key.pem >> /home/"#{CUSTOM_USER}"/pem_key/key.pem
-    #   chmod 600 /home/"#{CUSTOM_USER}"/pem_key/key.pem
-    #   chown "#{CUSTOM_USER}":"#{CUSTOM_USER}" /home/"#{CUSTOM_USER}"/pem_key/key.pem
-    #   rm /tmp/key.pem
-    # SHELL
-    # infra.vm.provision "file", source: "#{KEY_PUB_PEM}", destination: "/tmp/key.pem.pub"
-    # infra.vm.provision "shell", inline: <<-SHELL 
-    #   mkdir -p /home/"#{CUSTOM_USER}"/pem_key  
-    #   chown "#{CUSTOM_USER}":"#{CUSTOM_USER}" /home/"#{CUSTOM_USER}"/pem_key 
-    #   chmod 700 /home/"#{CUSTOM_USER}"/pem_key   
-    #   cat /tmp/key.pem.pub >> /home/"#{CUSTOM_USER}"/pem_key/key.pem.pub
-    #   chmod 644 /home/"#{CUSTOM_USER}"/pem_key/key.pem.pub
-    #   chown "#{CUSTOM_USER}":"#{CUSTOM_USER}" /home/"#{CUSTOM_USER}"/pem_key/key.pem.pub
-    #   # rm /tmp/key.pem.pub
-    # SHELL
   end
   # Define the worker VMs using a loop
   (1..WORKER_COUNT).each do |i|
