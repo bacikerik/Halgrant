@@ -84,6 +84,13 @@ Vagrant.configure("2") do |config|
       hv.memory = INFRA_MEMORY
       hv.cpus = INFRA_CPU
     end
+
+    # Provisioning script to disable GPG checks
+    config.vm.provision "shell", inline: <<-SHELL
+      echo 'Disabling GPG checks for repositories...'
+      sudo dnf config-manager --save --setopt=*gpgcheck=0
+    SHELL
+
     # Use public network with default switch for internet access on infra VM
     infra.vm.network :public_network, bridge: "Default Switch"
     # Use private network with vInternal switch for internal communication on all VMs
